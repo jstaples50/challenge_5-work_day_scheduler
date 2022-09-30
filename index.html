@@ -28,8 +28,53 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container time-block">
       <!-- Timeblocks go here -->
+      <!-- <table class="table time-block">
+        <thead>
+          <tr>
+            <th scope="col" class="col-12 col-md-4 col-xl-1">#</th>
+            <th scope="col" class="col-12 col-md-8 col-xl-10 hour" data-time="9"></th>
+            <th scope="col" class="col-12 col-md-4 col-xl-1 saveBtn">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td class="hour" data-time="10"><textarea name=""  id="" placeholder="stuff here"></textarea></td>
+            <td class="saveBtn"><i style="font-size:24px" class="fa">&#xf0c7;</i></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td class="hour" data-time="11"></td>
+            <td class="saveBtn"><i style="font-size:24px" class="fa">&#xf0c7;</i></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td class="hour" data-time="12"></td>
+            <td class="saveBtn"><i style="font-size:24px" class="fa">&#xf0c7;</i></td>
+          </tr>
+          <tr>
+            <th scope="row">thing</th>
+            <td class="hour"></td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <div class="container table">
+        <div class="row hour">
+          <div class="col-xl-1 time-block p-0">
+            <p>9 AM</p>
+          </div>
+          <div class="col-xl-10 p-0 d-flex justify-content-center align-items-center w-auto h-auto text-field" data-time="9">
+            <textarea class="w-100" placeholder="stuff here"></textarea>
+          </div>
+          <div class="col-xl-1 p-0">
+            <div class="saveBtn"><i style="font-size:24px" class="fa">&#xf0c7;</i></div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

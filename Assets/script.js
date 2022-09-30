@@ -14,3 +14,27 @@
 var timeDisplayEl = $('#currentDay');
 timeDisplayEl.text(moment().format("dddd MMMM Do"));
 
+// var tableEl = $('.table');
+
+
+
+
+var allTableDescendants = $('.table').find('*');
+var tdHourArray = [];
+var hourTest = moment().hour();
+
+
+for (var i = 0; i < allTableDescendants.length; i++) {
+    if ($(allTableDescendants[i]).hasClass('text-field')) {
+        tdHourArray.push(allTableDescendants[i]);
+    }
+}
+
+
+for (var i = 0; i < tdHourArray.length; i++) {
+    if (tdHourArray[i].dataset.time < hourTest) {
+        $(tdHourArray[i]).addClass('past');
+    }
+}
+
+console.log(tdHourArray);

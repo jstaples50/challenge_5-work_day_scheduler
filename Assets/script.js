@@ -1,9 +1,5 @@
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// WHEN I click into a timeblock
-// THEN I can enter an event
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
@@ -14,21 +10,16 @@
 var timeDisplayEl = $('#currentDay');
 timeDisplayEl.text(moment().format("dddd MMMM Do"));
 
-// var tableEl = $('.table');
 
+var tdHourArray = $('.text-field');
 
-
-
-var allTableDescendants = $('.table').find('*');
-var tdHourArray = [];
 var hourTest = moment().hour();
 
+var allButtonEls = $('i');
 
-for (var i = 0; i < allTableDescendants.length; i++) {
-    if ($(allTableDescendants[i]).hasClass('text-field')) {
-        tdHourArray.push(allTableDescendants[i]);
-    }
-}
+
+// *FUNCTIONS AND EXECUTION*
+
 
 // Checks if the hour is past, present, or future and dynamically updates
 

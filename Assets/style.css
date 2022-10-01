@@ -13,6 +13,10 @@ textarea {
   padding: 32px;
 }
 
+i {
+  font-size: 18px;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -70,4 +74,5 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }

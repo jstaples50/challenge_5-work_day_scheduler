@@ -7,7 +7,7 @@ var timeDisplayEl = $('#currentDay');
 timeDisplayEl.text(moment().format("dddd MMMM Do"));
 
 
-var tdHourArray = $('.text-field');
+var hourArray = $('.text-field');
 var allTextAreaEls = $('textarea');
 
 var currentHour = moment().hour();
@@ -15,13 +15,15 @@ var currentHour = moment().hour();
 var allButtonEls = $('i');
 allButtonEls.on('click', setTextAreaStorage);
 
+var timesArray = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM']
 
+var localStorageIterator = 9
 
 
 // *TESTS*
 
 
-// *FUNCTIONS AND EXECUTION*
+// *FUNCTIONS*
 
 // Finds associated text area to button
 
@@ -42,15 +44,31 @@ function setTextAreaStorage(event) {
 // Checks if the hour is past, present, or future and dynamically updates
 
 
-for (var i = 0; i < tdHourArray.length; i++) {
-    if (tdHourArray[i].dataset.time < currentHour) {
-        $(tdHourArray[i]).addClass('past');
-    } else if (tdHourArray[i].dataset.time == currentHour) {
-        $(tdHourArray[i]).addClass('present');
-    } else {
-        $(tdHourArray[i]).addClass('future');
+function checkStateOfHour() {
+    for (var i = 0; i < hourArray.length; i++) {
+        if (hourArray[i].dataset.time < currentHour) {
+            $(hourArray[i]).addClass('past');
+        } else if (hourArray[i].dataset.time == currentHour) {
+            $(hourArray[i]).addClass('present');
+        } else {
+            $(hourArray[i]).addClass('future');
+        }
     }
 }
+
+// Gets the local storage and sets it to the text area
+
+function getTextAreaStorage() {
+    for (var i = 0; i < allTextAreaEls.length; i++) {
+        $(`#${localStorageIterator}`).val(localStorage.getItem(`${timesArray[i]}`))
+        localStorageIterator++;
+    }
+}
+
+// *EXECUTION*
+
+checkStateOfHour();
+getTextAreaStorage();
 
 
 

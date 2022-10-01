@@ -30,11 +30,17 @@ for (var i = 0; i < allTableDescendants.length; i++) {
     }
 }
 
+// Checks if the hour is past, present, or future and dynamically updates
+
 
 for (var i = 0; i < tdHourArray.length; i++) {
     if (tdHourArray[i].dataset.time < hourTest) {
         $(tdHourArray[i]).addClass('past');
+    } else if (tdHourArray[i].dataset.time == hourTest) {
+        $(tdHourArray[i]).addClass('present');
+    } else {
+        $(tdHourArray[i]).addClass('future');
     }
 }
 
-console.log(tdHourArray);
+

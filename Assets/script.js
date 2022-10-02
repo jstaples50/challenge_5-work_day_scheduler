@@ -1,6 +1,3 @@
-// WHEN I refresh the page
-// THEN the saved events persist
-
 // *GLOBAL VARIABLES*
 
 var timeDisplayEl = $('#currentDay');
@@ -42,7 +39,6 @@ function setTextAreaStorage(event) {
 }
 
 // Checks if the hour is past, present, or future and dynamically updates
-
 
 function checkStateOfHour() {
     for (var i = 0; i < hourArray.length; i++) {
